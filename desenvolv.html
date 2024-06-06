@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <title>ULTRAKILL</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/featured_channel.jpg" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             body {
-                background-image: url("assets/ELEVADOR.png");
+                    background-image: url("assets/ELEVADOR.png");
+            }
+            .container {
+                margin-top: 50px;
+            }
+            .ultrakill-header {
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+                color: #ff004d;
+            }
+            .ultrakill-form {
+                background-color: #2a2a2a;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .btn-ultrakill {
+                background-color: #ff004d;
+                color: #fff;
+                border: none;
+            }
+            .btn-ultrakill:hover {
+                background-color: #e6003d;
             }
         </style>
     </head>
@@ -20,14 +41,13 @@
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-black" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-black">Start Bootstrap</div>
+              <div class="sidebar-heading border-bottom bg-black">          <br> </div>
                 <div class="list-group list-group-flush border border-white">
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-1 border border-white text-white" href="#!"><img src="assets/BRANCO.png" alt="ULTRAKILL" width="230" height="50"></a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="#!">Sobre</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="#!">Historia</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="#!">Influencia</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="#!">Desenvolvimento</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="#!">COMRPE AGORA</a>
+                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-1 border border-white text-white" href="index.html"><img src="assets/BRANCO.png" alt="ULTRAKILL" width="230" height="50"></a>
+                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="hist.html">Historia</a>
+                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="influ.html">Influencia</a>
+                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="desenvolv.html">Nossa Newsletter</a>
+                    <a class="list-group-item list-group-item-action list-group-item-dark bg-black p-3 border border-white text-white" href="https://store.steampowered.com/app/1229490/ULTRAKILL/">COMRPE AGORA</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -35,47 +55,97 @@
                 <!-- Top navigation-->
                 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom">
                     <div class="container-fluid">
-                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="btn btn-primary" id="sidebarToggle">Alternar Menu</button>
                         
                     </div>
-                </nav>
-                <!-- Page content-->
-                <div class="container-fluid mt-4 text-white" >
+                   </nav>
+                <br>
+                <div class="container-fluid mt-4 text-white">
                     <div class="row p-4 pb-0 pe-lg-0 pt-lg-4 align-items-center rounded-3 shadow-lg">
-                        <embed src="assets/ultrakill.webm" width="100%" height="300px" alt="">
-
-                        <div class="col-lg-7 p-3 p-lg-4 pt-lg-3">
+                    <div class="container">
+                        <h1 class="ultrakill-header">Receba as ultimas noticias de ULTRAKILL</h1>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <form class="ultrakill-form" id="newsletterForm">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="name">Nome</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="gamePlatform">Plataforma de Jogo Favorita</label>
+                                        <select class="form-control" id="gamePlatform" required>
+                                            <option>PC</option>
+                                            <option>PlayStation</option>
+                                            <option>Xbox</option>
+                                            <option>Nintendo Switch / Steam Deck</option>
+                                        </select>
+                                    </div>  
+                                    <br>
+                                    <hr>
+                                    <button type="submit" class="btn btn-ultrakill btn-block">Inscrever-se</button>
+                                    <button type="clear" class="btn border-white bg-white btn-block">Limpar</button>   
+                                    <br>
+                                </form>
+                                <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+                                    Inscrição realizada com sucesso!
+                                </div>
+                            <br></div>
                         </div>
-                        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                            <img class="rounded-lg-3" src="assets/LOGO.png" alt="" width="720">
-                        </div>
-                      </div>
-                    <h1 class="mt-4">SOBRE ULTRAKILL</h1>
-                    <img  src="assets/MANKIND_IS_DEAD_2.gif"  width="800">
-                    <h3>
-                        ULTRAKILL é um FPS ultraviolento da velha escola em ritmo acelerado que combina jogos de tiro clássicos como Quake, jogos de tiro modernos como Doom (2016) e jogos de ação de personagens como Devil May Cry.
-                        A humanidade foi extinta e os únicos seres que restam na terra são máquinas movidas a sangue.
-                        Mas agora esse sangue está começando a escorrer pela superfície...
-                        As máquinas estão correndo para as profundezas do Inferno em busca de mais.
-                    </h3>   
-                    <img  src="assets/BLOOD_IS_FUEL.gif"  width="800">
-                    <h3>
-                        Use suas muitas habilidades de movimento para se manter móvel e evitar os ataques implacáveis ​​dos mortos, demônios e outras máquinas.
-                        Destrua-os com um arsenal de armas incrivelmente poderosas, cada uma com múltiplas variações disponíveis.
-                        Mergulhe no sangue deles para recuperar a saúde e continuar lutando.
-                    </h3>
-                    <img  src="assets/HELL_IS_FULL.gif"  width="800">
-                    <h3>
-                        Mate rápido e com o estilo SSS para acumular combos e ganhar pontos que podem ser usados ​​em variações de armas entre missões.
-                        Domine os vários níveis para alcançar classificações elevadas e enfrente desafios opcionais únicos.
-                        Explore os ambientes de campanha variados e únicos inspirados no Inferno de Dante para descobrir muitos segredos escondidos
-                    </h3>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </div>
+                    <footer class="text-center text-lg-start border border-white" style="background-color: #800020  ;">
+                        <div class="container d-flex justify-content-center py-5">
+                          <button type="button" href="https://discord.gg/newblood" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                            <img src="assets/discord.png" width="30px">
+                          </button>
+                          <button type="button" href="https://www.youtube.com/watch?v=lXiCFvaoVik&ab_channel=NewBloodInteractive" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                            <img src="assets/Youtube.png" width="30px">
+                          </button>
+                          <button type="button" href="https://www.instagram.com/newbloodinteractive/" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                            <img src="assets/Instagram_icon.png.webp" width="30px">
+                          </button>
+                          <button type="button" href="https://twitter.com/ULTRAKILLGame" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                            <img src="assets/twitter.png" width="30px">
+                          </button>
+                          <button type="button" id="backToTop" class="btn btn-primary" style="display:none;">
+                            <img src="assets/cima.png" width="30px">
+                          </button>
+                        </div>
+                          <!-- Copyright -->
+                        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                           ©2024 Nicolas Duarte, Todos os direitos reservados
+                        </div>
+              
+                        <!-- Copyright -->
+                      </footer>
+                      <!-- Bootstrap core JS-->
+                      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+                      <!-- Core theme JS-->
+                      <script src="js/scripts.js"></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const gamePlatform = document.getElementById('gamePlatform').value;
+            console.log(`Nome: ${name}, Email: ${email}, Plataforma: ${gamePlatform}`);
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('newsletterForm').reset();
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
